@@ -31,16 +31,16 @@ app.set("view engine", "ejs");
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
 var steps = {
-10 : 'Ok! Let\'s get painting! Are you prepared? Just say next to go the first step!',
-  1 : 'First, you\'ll need a cellulose sponge, dishwashing liquid, painter\'s tape, primer, paint, a paint tray, a paint roller, a two-inch angled paintbrush, and a ladder.',
-  2 : 'Next, you\'ll need to get started cleaning the walls. Using the large cellulose sponge and a solution of water mixed with a few drops of mild dishwashing liquid, clean your walls to remove any dust, dirt, and grease.',
-  3: 'Use blue painter\'s tape, not masking tape, to protect any areas you don’t want your paint to get on, such as trim, molding, doorknobs, window frames, and door frames. Run long strips of the tape just inside the outer edges of these areas. The outer edges of the tape should lie exactly where the wall meets the trim, covering the parts of the trim that your roller or paintbrush might hit when you paint.',
-  4: 'Pour enough primer into your tray so that it almost fills the well toward the bottom of the tray without covering the angled portion where the ridges are.',
-  5: 'Dip your roller into the primer, rolling it back and forth across the tray’s ridges a few times to remove any excess and prevent drips. Make sure the roller gets evenly coated. Run the roller up and down a section of the wall, applying primer until the section is fully covered. Continue until your wall is fully covered, reapplying primer to the roller as needed.',
-  6: 'make sure the primer is completely dry. Check the manufacturer’s drying instructions, which you’ll find on the can.',
-  7: 'Dip a two-inch angled brush into the paint, coating the bristles only about a third of the way down the brush. Run the brush along the outer edge of the tape that’s covering the trim (on the wall side of the tape; not the trim side). Keep applying paint flush against your taped trim, working it outward about two or three inches from the tape. Continue until you have finished painting a narrow swathe along all of the taped areas.',
-  8: 'Fill a paint tray with paint; dip your roller into it, removing excess. Roll the paint onto the wall in a 3-by-3-foot w shape. Working your way back across that w, without lifting the roller, fill in empty patches until that section of wall is fully covered. Continue, adding more paint to the roller as needed, until the whole wall is painted.',  
-  9: 'Peel off the painter\'s tape while the paint is still wet to avoid accidentally removing any dried paint along with it. Wait one to several days for the paint to completely dry. Longer if you want to avoid offgassing. Congratulations! You\'re done!' 
+10 : 'Ok! Let\'s get cooking! Are you ready? Just say next to go the first step!',
+  1 : 'First, you\'ll need the ingredients. Be warned, there are quite a few. 1 tablespoon extra-virgin olive oil, 2 minced garlic cloves, 2 medium sliced or diced carrots, 2 celery ribs halved lengthwise, sliced or diced dried thyme, dried green pepper, diced dried purple onion, 1 bay leaf, 8 buillon cubes, 5 cups water, 2 quarts chicken stock or broth, 1 cup long grain white rice, 3 12.5 ounce cans of chicken with rib meat, and finally Kosher salt and freshly ground black pepper.',
+  2 : 'Place a soup pot over medium heat and add the olive oil. ',
+  3: 'Add the onion, garlic, carrots, celery, thyme and bay leaf. ',
+  4: 'Cook and stir for about 6 minutes, until the vegetables are softened but not browned.',
+  5: 'Pour in the chicken broth and water. bring the liquid to a boil.',
+  6: 'Add in the rice and chicken ',
+  7: 'season with salt and pepper.',
+  8: ' Cook on medium-low until the rice is tender-about 30 minutes. ',
+  9: 'Serve hot and enjoy.'
    };
   
 
