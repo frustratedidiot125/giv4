@@ -31,16 +31,16 @@ app.set("view engine", "ejs");
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
 var steps = {
-10 : 'Ok! Let\'s get cooking! Are you ready? Just say next to go the first step!',
-  1 : 'First, you\'ll need the ingredients. Be warned, there are quite a few. 1 tablespoon extra-virgin olive oil, 2 minced garlic cloves, 2 medium sliced or diced carrots, 2 celery ribs halved lengthwise, sliced or diced dried thyme, dried green pepper, diced dried purple onion, 1 bay leaf, 8 buillon cubes, 5 cups water, 2 quarts chicken stock or broth, 1 cup long grain white rice, 3 12.5 ounce cans of chicken with rib meat, and finally Kosher salt and freshly ground black pepper.',
-  2 : 'Place a soup pot over medium heat and add the olive oil. ',
-  3: 'Add the onion, garlic, carrots, celery, thyme and bay leaf. ',
-  4: 'Cook and stir for about 6 minutes, until the vegetables are softened but not browned.',
-  5: 'Pour in the chicken broth and water. bring the liquid to a boil.',
-  6: 'Add in the rice and chicken ',
-  7: 'season with salt and pepper.',
-  8: ' Cook on medium-low until the rice is tender-about 30 minutes. ',
-  9: 'Serve hot and enjoy.'
+10 : 'Ready to get over a grievance? Just say next to go the first step!',
+  1 : 'First, be aware of your feelings. Know exactly how you feel about what happened; be able to articulate what, in particular, was not OK about the situation in which you feel you were wronged. Tell a few trusted people about your experience.',
+  2 : 'Know that forgiveness is for your own sake. Make a commitment to yourself to do what you have to do to feel better. Forgiveness is for you, not for anyone else.',
+  3: 'Do not expect reconciliation. Forgiveness does not necessarily mean reconciliation with the person who hurt you, or condoning their actions. What you\'re looking for is a sense of peace and closure.',
+  4: 'Recognize how the event is affecting you in the present. Recognize that your primary distress is coming from hurt feelings, thoughts and physical upset you are suffering now, not what offended or deeply hurt you two minutes or 10 years ago. Forgiveness helps to heal those hurt feelings.',
+  5: 'Learn to activate the relaxation response. At the moment you feel upset, practice a simple stress management technique of deep breathing to soothe your body’s flight or fight response. Focus on your breathing and try to bring your mind back to a peaceful state. ',
+  6: 'Concentrate on what you can control. Remember that you can only control your own thoughts and actions, not anyone else’s. Give up expecting things from other people, or your life, that they do not choose to give you. ',
+  7: ' Move on. Instead of mentally replaying your hurt over and over, stop ruminating and seek out new friends and new situations that can lead to further positive influences.',
+  8: ' Be the agent of change in your life. Remember that a life well lived is the best revenge. Instead of focusing on your wounded feelings, and thereby giving power to the person who hurt you, learn to look for the love, beauty and kindness around you. ',
+  9: 'Change the story. Amend your grievance story with a new ending. Your heroic choice to forgive.'
    };
   
 
@@ -49,7 +49,7 @@ alexaApp.launch(function(req, res) {
 
   
  // res.session('persstep', 0); //maybe we want to put that or some variation of this somewhere else like in the intent. We also never  figured out the repeat function but the hell with that.
-  var prompt = "Hi there! I can teach you how to cook a delicious chicken and rice soup. Just say continue to begin! If you've been here before, I'll try to pick up where we left off.  If you want to start from a particular step, just say the word step, followed by the step number. You can say stop at any time to exit. ";
+  var prompt = "Hi there! I can teach you about the 9 steps of forgiveness, loosely based on research by the Stanford University Forgiveness Project. Just say continue to begin! If you've been here before, I'll try to pick up where we left off.  If you want to start from a particular step, just say the word step, followed by the step number. You can say stop at any time to exit. ";
   res.say(prompt).reprompt(prompt).shouldEndSession(false);
 });
 
