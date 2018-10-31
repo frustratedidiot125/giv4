@@ -31,17 +31,16 @@ app.set("view engine", "ejs");
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
 var steps = {
-10 : 'Ok! Let\'s get started on our cupcake in a coffee cup! Are you ready? Just say continue to go the first step!',
-  1 : 'First, you\'ll need to gather the following ingredients. 1/4 cup all-purpose flour, 2 tablespoons unsweetened cocoa powder, 1/4 teaspoon baking powder, 2 to 3 tablespoons granulated sugar, 1/8 teaspoon salt, 1/4 cup plus 1 tablespoon milk, 2 tablespoons vegetable oil, and either 1 tablespoon hazelnut chocolate spread or mini chocolate chips.',
-
-  2 : 'Next, you\'ll need some basic kitchen hardware. grab a whisk or a fork if no whisk can be found, a medium sized Bowl, a Microwave safe mug, larger is better, a section of paper towel or a large microwave safe plate, and make sure you\'ve got a working microwave.',
-  3: 'Whisk together all the dry ingredients in your medium-sized Bowl.',
-  4: 'Whisk in the milk and the vegetable oil until all ingredients are combined and your batter has no clumps.',
-  5: 'Pour the batter into a microwave-safe mug. You\'ll want to make sure there\'s enough room for the cake to expand without spilling over.',
-  6: 'Drop the hazelnut spread in a dollop or simply pour the chocolate chips into the center of the top of the batter.',
-  7: 'Place the mug in the center of the microwave with the paper towel or large plate underneath.',
-  8: 'Now it\'s time to cook your creation. Set your microwave on high and prepare to cook for about 70 seconds. Depending on the power of your device, you may need to add or shave off a few seconds. This recipe has been calibrated for 950 watt ovens, so, just use your judgement. Hit start and watch out for signs of overcooking.', 
-  9: 'Allow the cupcake and mug to cool just a bit, carefully remove the mug from the plate or paper towel. there may be some spillage. And you\'re ready to serve your freshly baked cupcake. Enjoy!' 
+10 : 'Ok! Let\'s get painting! Are you prepared? Just say next to go the first step!',
+  1 : 'First, you\'ll need a cellulose sponge, dishwashing liquid, painter\'s tape, primer, paint, a paint tray, a paint roller, a two-inch angled paintbrush, and a ladder.',
+  2 : 'Next, you\'ll need to get started cleaning the walls. Using the large cellulose sponge and a solution of water mixed with a few drops of mild dishwashing liquid, clean your walls to remove any dust, dirt, and grease.',
+  3: 'Use blue painter\'s tape, not masking tape, to protect any areas you don’t want your paint to get on, such as trim, molding, doorknobs, window frames, and door frames. Run long strips of the tape just inside the outer edges of these areas. The outer edges of the tape should lie exactly where the wall meets the trim, covering the parts of the trim that your roller or paintbrush might hit when you paint.',
+  4: 'Pour enough primer into your tray so that it almost fills the well toward the bottom of the tray without covering the angled portion where the ridges are.',
+  5: 'Dip your roller into the primer, rolling it back and forth across the tray’s ridges a few times to remove any excess and prevent drips. Make sure the roller gets evenly coated. Run the roller up and down a section of the wall, applying primer until the section is fully covered. Continue until your wall is fully covered, reapplying primer to the roller as needed.',
+  6: 'make sure the primer is completely dry. Check the manufacturer’s drying instructions, which you’ll find on the can.',
+  7: 'Dip a two-inch angled brush into the paint, coating the bristles only about a third of the way down the brush. Run the brush along the outer edge of the tape that’s covering the trim (on the wall side of the tape; not the trim side). Keep applying paint flush against your taped trim, working it outward about two or three inches from the tape. Continue until you have finished painting a narrow swathe along all of the taped areas.',
+  8: 'Fill a paint tray with paint; dip your roller into it, removing excess. Roll the paint onto the wall in a 3-by-3-foot w shape. Working your way back across that w, without lifting the roller, fill in empty patches until that section of wall is fully covered. Continue, adding more paint to the roller as needed, until the whole wall is painted.',  
+  9: 'Peel off the painter\'s tape while the paint is still wet to avoid accidentally removing any dried paint along with it. Wait one to several days for the paint to completely dry. Longer if you want to avoid offgassing. Congratulations! You\'re done!' 
    };
   
 
@@ -50,7 +49,7 @@ alexaApp.launch(function(req, res) {
 
   
  // res.session('persstep', 0); //maybe we want to put that or some variation of this somewhere else like in the intent. We also never  figured out the repeat function but the hell with that.
-  var prompt = "Hi there! I can teach you how to make an authentic, single-serving, cupcake that could be ready to eat in slightly over a minute! Just say continue to begin! If you've been here before, I'll try to pick up where we left off.  If you want to start from a particular step, just say the word step, followed by the step number. You can say stop at any time to exit. ";
+  var prompt = "Hi there! I can teach you how to slap a beautiful fresh coat of paint on the walls of any standard room! Just say continue to begin! If you've been here before, I'll try to pick up where we left off.  If you want to start from a particular step, just say the word step, followed by the step number. You can say stop at any time to exit. ";
   res.say(prompt).reprompt(prompt).shouldEndSession(false);
 });
 
@@ -79,7 +78,7 @@ if (slotstep && slotstep > 0 && slotstep < 10 && parseFloat(slotstep) == parseIn
          var needinteger = 1;
      } else if (!(+req.session('step')) || !persstep || persstep == 0  || persstep == "??"){
    var step = 1;
- } else if ( persstep == 18 || persstep > 18) {
+ } else if ( persstep == 10 || persstep > 10) {
    var exit = 1;
  } else if (slotstep != "??" && isNaN(slotstep)) {
    var garbage = 1;
@@ -87,7 +86,7 @@ if (slotstep && slotstep > 0 && slotstep < 10 && parseFloat(slotstep) == parseIn
    //Eep - how do we deal with things that are not defined in the slot? Like an invalid intents? Or invalid rejected slots?
    //need to know of if garbage slot like 'pineapple' and persstep is valid, then refer to persstep. if no slot, then wgat
 
- } else if (persstep > 0 && persstep < 18 ){
+ } else if (persstep > 0 && persstep < 10 ){
    var step = persstep;
    //for lower down the road //if step = 7 then res.say or end session. or set res.saybsection to...somethjng else  or set turuthiness to a varuable 
  
@@ -114,12 +113,12 @@ if (slotstep && slotstep > 0 && slotstep < 10 && parseFloat(slotstep) == parseIn
            persstep = 1; 
                     }
       res.session('step', persstep)
-      res.say("Whoa, there are only 9 steps in this recipe. Please say step and choose a step between 1 and 9, or say continue and I'll try to pick up where we left off.").shouldEndSession(false);
+      res.say("Whoa, there are only 9 steps in this guide. Please say step and choose a step between 1 and 9, or say continue and I'll try to pick up where we left off.").shouldEndSession(false);
     } else if (screwingwithme){
-        res.say("There are no negatives when it comes to cupcakes, so I'm really not sure what to do with the negative step number you've given me. Why not try again, but this time, give me the word step followed by a positive step number. Or say continue to let me take you to where all the cupcake-y goodness is!").shouldEndSession(false);
+        res.say("There are no negatives when it comes to following instructions, so I'm really not sure what to do with the negative step number you've given me. Why not try again, but this time, give me the word step followed by a positive step number. Or say continue to let me take you to where all the cupcake-y goodness is!").shouldEndSession(false);
         res.session('step', persstep);
       } else if (needinteger){
-        res.say("Decimals? Really? Cake comes in fractional slices, not decimals. Do try again, but this time, please give me the word step followed by a step number using whole numbers, and only whole numbers, or say continue to go on to the next step.").shouldEndSession(false);
+        res.say("Decimals? Really? steps come integers, not decimals. Do try again, but this time, please give me the word step followed by a step number using whole numbers, and only whole numbers, or say continue to go on to the next step.").shouldEndSession(false);
         res.session('step', persstep);
     } else if (garbage){
        if (persstep > 0 && persstep < 10) {
@@ -172,7 +171,7 @@ alexaApp.intent('StepContinue', {
       res.say(steps[step]).shouldEndSession(false);
       res.session('step', 1);
     } else {
-        res.say("Step " + step + ". " + steps[step] + " When you're ready for the next step, say continue.").shouldEndSession(false);
+        res.say("Step " + step + ". " + steps[step] + " When you're ready for the next step, say next.").shouldEndSession(false);
         step += 1;
         res.session('step', step);
         }
@@ -186,7 +185,7 @@ alexaApp.intent("AMAZON.HelpIntent", {
   "slots": {} },
   function(request, response) {
     
-var HELP_MESSAGE = "Say continue to proceed to the next step, or specify a step by saying step followed by a step number between 1 and 9.  Follow the instructions and further prompts or say stop to exit at any time. And remember, baking is fun!";
+var HELP_MESSAGE = "Say next to proceed to the next step, or specify a step by saying step followed by a step number between 1 and 9.  Follow the instructions and further prompts or say stop to exit at any time. And remember, baking is fun!";
     response.say(HELP_MESSAGE).shouldEndSession(false);
   }
  );
